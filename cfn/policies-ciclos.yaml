@@ -13,5 +13,6 @@ Resources:
         Statement:
           - Effect: "Allow"
             Action:
-              - "ec2:DescribeInstances*"
-            Resource: "*"
+              - "sns:Publish"
+            Resource:
+              - !Sub "arn:aws:sns:${AWS::Region}:${AWS::AccountId}:topic-ciclos-oscor-orders"

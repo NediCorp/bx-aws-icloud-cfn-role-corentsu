@@ -1,6 +1,11 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Definition of IAM policies
 
+Parameters:
+  BucketNameParam:
+    Type: String
+    Description: Nombre del bucket de S3 pasado desde el stack principal
+
 Resources:
   SNSInlinePolicy:
     Type: 'AWS::IAM::Policy'

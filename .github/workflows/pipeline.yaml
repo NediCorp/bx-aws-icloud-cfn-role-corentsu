@@ -5,6 +5,9 @@ on:
     branches:
       - development
 
+env:
+  STACK_NAME: "SA-roles-policies"
+
 jobs:
   cluster:
     name: Deploy stack to AWS
@@ -34,7 +37,7 @@ jobs:
     - name: Cfn Nested Stack - Role and Policies
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
-        name: SA-Integr
+        name: ${{ env.STACK_NAME }}
         template: nested.yaml
         # template: cloudformation/roles/integr.yaml
         capabilities: CAPABILITY_NAMED_IAM

@@ -12,6 +12,3 @@ Resources:
     DependsOn: RolesStack
     Properties:
       TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/clientes/policies.yaml'
-      # Parameters:
-      #   RolClientesIntegrName: !GetAtt RolesStack.Outputs.RolClientesIntegrName
-      #   RolClientesIntcusName: !GetAtt RolesStack.Outputs.RolClientesIntcusName

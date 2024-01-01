@@ -29,8 +29,8 @@ jobs:
 
     - name: Subir Templates a S3
       run: |
-        aws s3 cp cfn/integr/roles-clientes.yaml s3://bx-tecnogia-dev/icloud/cfn-nested/clientes/roles-clientes.yaml
-        aws s3 cp cfn/integr/policies-integr.yaml s3://bx-tecnogia-dev/icloud/cfn-nested/clientes/policies-integr.yaml
+        aws s3 cp cfn/roles-clientes.yaml s3://bx-tecnogia-dev/icloud/cfn-nested/clientes/roles-clientes.yaml
+        aws s3 cp cfn/policies-integr.yaml s3://bx-tecnogia-dev/icloud/cfn-nested/clientes/policies-integr.yaml
 
     - name: Cfn Nested Stack - Role and Policies
       uses: aws-actions/aws-cloudformation-github-deploy@v1

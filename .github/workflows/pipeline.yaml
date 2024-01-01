@@ -15,6 +15,8 @@ jobs:
     permissions:
         id-token: write
         contents: read
+    environment:
+      name: ${{ github.ref_name }}
 
     steps:
     - name: Checkout
@@ -24,7 +26,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-region: ${{ secrets.AWS_REGION }}
-        role-to-assume: ${{ secrets.AWS_ROLE_CFN }}
+        role-to-assume: ${{ secrets.AWS_ROLE }}
         role-session-name: GitHubActionsAWSAccess
 
     - name: Subir Templates a S3

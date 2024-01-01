@@ -1,4 +1,4 @@
-name: Deploy Cluster
+name: Cloudformation Nested Stack - Role and Policies
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - development
 
 env:
-  STACK_NAME: "SA-corentsu"
+  STACK_NAME: "sa-corentsu"
 
 jobs:
   cluster:
-    name: Deploy stack to AWS
+    name: Deploy Stack to AWS
     runs-on: ubuntu-latest
     permissions:
         id-token: write
@@ -40,3 +40,9 @@ jobs:
         template: cfn/nested.yaml
         capabilities: CAPABILITY_NAMED_IAM
         no-fail-on-empty-changeset: '1'
+
+    - name: Termination Protection - Enable
+      run: |
+        aws cloudformation update-termination-protection \
+            --stack-name ${{ env.STACK_NAME }} \
+            --enable-termination-protection

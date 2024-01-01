@@ -1,5 +1,10 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Nested Stack que incluye roles, políticas de IAM para Redes Transversales y Soporte
+Description: AWS Nested Stack for IAM SA.
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Nombre del bucket de S3
 
 Resources:
   RolesCorentsu:

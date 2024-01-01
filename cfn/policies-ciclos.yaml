@@ -1,6 +1,11 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Definition of IAM policies
 
+Parameters:
+  BucketNameParam:
+    Type: String
+    Description: Nombre del bucket de S3 pasado desde el stack principal
+
 Resources:
   SNSInlinePolicy:
     Type: 'AWS::IAM::Policy'
@@ -39,3 +44,19 @@ Resources:
               - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:queue-ciclos-oscor-orders-updated-01"
               - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:queue-ciclos-optra-events-created-01"
               - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:queue-ciclos-optra-events-inyected-01"
+
+  S3InlinePolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: "S3-InlinePolicy"
+      Roles:
+        - !ImportValue RolCorentsuCiclosName
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Action:
+              - "s3:PutObject"
+              - "s3:GetObject"
+            Resource:
+              - !Sub "arn:aws:s3:::${BucketNameParam}/ciclos/*"

@@ -29,13 +29,14 @@ jobs:
 
     - name: Subir Templates a S3
       run: |
-        aws s3 cp cfn/roles-clientes.yaml s3://bx-tecnogia-dev/icloud/cfn-nested/clientes/roles-clientes.yaml
-        aws s3 cp cfn/policies-integr.yaml s3://bx-tecnogia-dev/icloud/cfn-nested/clientes/policies-integr.yaml
+        for file in cfn/roles-* cfn/policies-*; do
+          aws s3 cp "$file" "s3://bx-tecnogia-dev/icloud/cfn-nested/clientes/${file##*/}"
+        done
 
     - name: Cfn Nested Stack - Role and Policies
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
         name: ${{ env.STACK_NAME }}
-        template: cfn/integr/nested.yaml
+        template: cfn/nested.yaml
         capabilities: CAPABILITY_NAMED_IAM
         no-fail-on-empty-changeset: '1'

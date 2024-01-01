@@ -15,6 +15,15 @@ Resources:
               Service: "pods.eks.amazonaws.com"
             Action: "sts:AssumeRole"
       # Path: "/clientes/integr/"
+      Tags:
+        - Key: "CreationDate"
+          Value: "01-01-2024"
+        - Key: "CreatedBy"
+          Value: "github.actions"
+        - Key: "Domain"
+          Value: "clientes"
+        - Key: "SubDomain"
+          Value: "integr"
 
   RolClientesIntcus:
     Type: 'AWS::IAM::Role'
@@ -29,6 +38,16 @@ Resources:
               Service: "pods.eks.amazonaws.com"
             Action: "sts:AssumeRole"
       # Path: "/clientes/intcus/"
+      Tags:
+        - Key: "CreationDate"
+          Value: "01-01-2024"
+        - Key: "CreatedBy"
+          Value: "github.actions"
+        - Key: "Domain"
+          Value: "clientes"
+        - Key: "SubDomain"
+          Value: "intcus"
+
 
   RolClientesMktven:
     Type: 'AWS::IAM::Role'
@@ -43,6 +62,15 @@ Resources:
               Service: "pods.eks.amazonaws.com"
             Action: "sts:AssumeRole"
       # Path: "/clientes/mktven/"
+      Tags:
+        - Key: "CreationDate"
+          Value: "01-01-2024"
+        - Key: "CreatedBy"
+          Value: "github.actions"
+        - Key: "Domain"
+          Value: "clientes"
+        - Key: "SubDomain"
+          Value: "mktven"
 
   RolClientesOnbemi:
     Type: 'AWS::IAM::Role'
@@ -57,6 +85,15 @@ Resources:
               Service: "pods.eks.amazonaws.com"
             Action: "sts:AssumeRole"
       # Path: "/clientes/onbemi/"
+      Tags:
+        - Key: "CreationDate"
+          Value: "01-01-2024"
+        - Key: "CreatedBy"
+          Value: "github.actions"
+        - Key: "Domain"
+          Value: "clientes"
+        - Key: "SubDomain"
+          Value: "onbemi"
 
   RolClientes1bluex:
     Type: 'AWS::IAM::Role'
@@ -71,6 +108,15 @@ Resources:
               Service: "pods.eks.amazonaws.com"
             Action: "sts:AssumeRole"
       # Path: "/clientes/1bluex/"
+      Tags:
+        - Key: "CreationDate"
+          Value: "01-01-2024"
+        - Key: "CreatedBy"
+          Value: "github.actions"
+        - Key: "Domain"
+          Value: "clientes"
+        - Key: "SubDomain"
+          Value: "1bluex"
 
   RolClientesPosaut:
     Type: 'AWS::IAM::Role'
@@ -85,7 +131,15 @@ Resources:
               Service: "pods.eks.amazonaws.com"
             Action: "sts:AssumeRole"
       # Path: "/clientes/posaut/"
-
+      Tags:
+        - Key: "CreationDate"
+          Value: "01-01-2024"
+        - Key: "CreatedBy"
+          Value: "github.actions"
+        - Key: "Domain"
+          Value: "clientes"
+        - Key: "SubDomain"
+          Value: "posaut"
 
 Outputs:
   RolClientesIntegrName:

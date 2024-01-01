@@ -14,14 +14,14 @@ Resources:
             Principal:
               Service: "pods.eks.amazonaws.com"
             Action: "sts:AssumeRole"
-      # Path: "/clientes/ciclos/"
+      # Path: "/corentsu/ciclos/"
       Tags:
         - Key: "CreationDate"
           Value: "01-01-2024"
         - Key: "CreatedBy"
           Value: "github.actions"
         - Key: "Domain"
-          Value: "clientes"
+          Value: "corentsu"
         - Key: "SubDomain"
           Value: "ciclos"
 
@@ -37,14 +37,14 @@ Resources:
             Principal:
               Service: "pods.eks.amazonaws.com"
             Action: "sts:AssumeRole"
-      # Path: "/clientes/pdoohd/"
+      # Path: "/corentsu/pdoohd/"
       Tags:
         - Key: "CreationDate"
           Value: "01-01-2024"
         - Key: "CreatedBy"
           Value: "github.actions"
         - Key: "Domain"
-          Value: "clientes"
+          Value: "corentsu"
         - Key: "SubDomain"
           Value: "pdoohd"
 
@@ -61,14 +61,14 @@ Resources:
             Principal:
               Service: "pods.eks.amazonaws.com"
             Action: "sts:AssumeRole"
-      # Path: "/clientes/rdgcap/"
+      # Path: "/corentsu/rdgcap/"
       Tags:
         - Key: "CreationDate"
           Value: "01-01-2024"
         - Key: "CreatedBy"
           Value: "github.actions"
         - Key: "Domain"
-          Value: "clientes"
+          Value: "corentsu"
         - Key: "SubDomain"
           Value: "rdgcap"
 
@@ -84,38 +84,38 @@ Resources:
             Principal:
               Service: "pods.eks.amazonaws.com"
             Action: "sts:AssumeRole"
-      # Path: "/clientes/soport/"
+      # Path: "/corentsu/soport/"
       Tags:
         - Key: "CreationDate"
           Value: "01-01-2024"
         - Key: "CreatedBy"
           Value: "github.actions"
         - Key: "Domain"
-          Value: "clientes"
+          Value: "corentsu"
         - Key: "SubDomain"
           Value: "soport"
 
 Outputs:
   RolCorentsuCiclosName:
-    Description: "Name del Rol Clientes Ciclos"
+    Description: "Name del Rol corentsu Ciclos"
     Value: !Ref RolCorentsuCiclos
     Export:
       Name: RolCorentsuCiclosName
 
   RolCorentsuPdoohdName:
-    Description: "Name del Rol Clientes Pdoohd"
+    Description: "Name del Rol corentsu Pdoohd"
     Value: !Ref RolCorentsuPdoohd
     Export:
       Name: RolCorentsuPdoohdName
 
   RolCorentsuRdgcapName:
-    Description: "Name del Rol Clientes Rdgcap"
+    Description: "Name del Rol corentsu Rdgcap"
     Value: !Ref RolCorentsuRdgcap
     Export:
       Name: RolCorentsuRdgcapName
 
   RolCorentsuSoportName:
-    Description: "Name del Rol Clientes Soport"
+    Description: "Name del Rol corentsu Soport"
     Value: !Ref RolCorentsuSoport
     Export:
       Name: RolCorentsuSoportName

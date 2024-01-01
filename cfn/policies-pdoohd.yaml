@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Definición de políticas de IAM
 
 Resources:
-  SNS-InlinePolicy:
+  SNSInlinePolicy:
     Type: 'AWS::IAM::Policy'
     Properties:
       PolicyName: "SNS-InlinePolicy"
@@ -17,7 +17,7 @@ Resources:
             Resource:
               - !Sub "arn:aws:sns:${AWS::Region}:${AWS::AccountId}:topic-pdoohd-pudom-agencies"
 
-  SQS-InlinePolicy:
+  SQSInlinePolicy:
     Type: 'AWS::IAM::Policy'
     Properties:
       PolicyName: "SQS-InlinePolicy"

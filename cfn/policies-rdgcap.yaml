@@ -2,10 +2,10 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Definición de políticas de IAM
 
 Resources:
-  SNS-Policy:
+  SNSInlinePolicy:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "SNS-Policy"
+      PolicyName: "SNS-InlinePolicy"
       Roles:
         - !ImportValue RolCorentsuRdgcapName
       PolicyDocument:
@@ -17,10 +17,10 @@ Resources:
             Resource:
               - !Sub "arn:aws:sns:${AWS::Region}:${AWS::AccountId}:TOPIC_NAME"
 
-  SQS-Policy:
+  SQSInlinePolicy:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "SQS-Policy"
+      PolicyName: "SQS-InlinePolicy"
       Roles:
         - !ImportValue RolCorentsuRdgcapName
       PolicyDocument:

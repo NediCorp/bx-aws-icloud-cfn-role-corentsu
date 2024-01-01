@@ -10,7 +10,7 @@ Resources:
   RolesCorentsu:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: 'https://${BucketCfn}.s3.${AWS::Region}.amazonaws.com/icloud/cfn-nested/corentsu/roles-corentsu.yaml'
+      TemplateURL: !Sub 'https://${BucketCfn}.s3.${AWS::Region}.amazonaws.com/icloud/cfn-nested/corentsu/roles-corentsu.yaml'
       Parameters:
         BucketNameParam: !Ref BucketName
 
@@ -45,3 +45,5 @@ Resources:
       TemplateURL: 'https://${BucketCfn}.s3.${AWS::Region}.amazonaws.com/icloud/cfn-nested/corentsu/policies-soport.yaml'
       Parameters:
         BucketNameParam: !Ref BucketName
+
+# https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/roles-corentsu.yaml

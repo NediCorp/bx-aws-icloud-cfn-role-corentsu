@@ -22,7 +22,7 @@ Resources:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://${BucketCfn}.s3.${AWS::Region}.amazonaws.com/icloud/cfn-nested/corentsu/policies-ciclos.yaml'
+      TemplateURL: !Sub 'https://${BucketCfn}.s3.${AWS::Region}.amazonaws.com/icloud/cfn-nested/corentsu/policies-ciclos.yaml'
       Parameters:
         BucketNameParam: !Ref BucketName
 
@@ -30,7 +30,7 @@ Resources:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://${BucketCfn}.s3.${AWS::Region}.amazonaws.com/icloud/cfn-nested/corentsu/policies-pdoohd.yaml'
+      TemplateURL: !Sub 'https://${BucketCfn}.s3.${AWS::Region}.amazonaws.com/icloud/cfn-nested/corentsu/policies-pdoohd.yaml'
       Parameters:
         BucketNameParam: !Ref BucketName
 
@@ -38,7 +38,7 @@ Resources:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://${BucketCfn}.s3.${AWS::Region}.amazonaws.com/icloud/cfn-nested/corentsu/policies-rdgcap.yaml'
+      TemplateURL: !Sub 'https://${BucketCfn}.s3.${AWS::Region}.amazonaws.com/icloud/cfn-nested/corentsu/policies-rdgcap.yaml'
       Parameters:
         BucketNameParam: !Ref BucketName
 
@@ -46,7 +46,7 @@ Resources:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://${BucketCfn}.s3.${AWS::Region}.amazonaws.com/icloud/cfn-nested/corentsu/policies-soport.yaml'
+      TemplateURL: !Sub 'https://${BucketCfn}.s3.${AWS::Region}.amazonaws.com/icloud/cfn-nested/corentsu/policies-soport.yaml'
       Parameters:
         BucketNameParam: !Ref BucketName
 

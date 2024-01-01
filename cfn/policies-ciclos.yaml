@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Definición de políticas de IAM
+Description: Definition of IAM policies
 
 Resources:
   SNSInlinePolicy:

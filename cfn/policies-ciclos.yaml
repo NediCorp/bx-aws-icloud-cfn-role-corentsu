@@ -31,9 +31,9 @@ Resources:
             Action:
               - "sqs:ChangeMessageVisibility"
               - "sqs:GetQueueAttributes"
-              - "sqs:GetQueueUrl"
               - "sqs:ReceiveMessage"
               - "sqs:SendMessage"
+              - "sqs:GetQueueUrl"
             Resource:
               - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:queue-ciclos-oscor-orders-injected-01"
               - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:queue-ciclos-oscor-orders-updated-01"

@@ -29,14 +29,16 @@ jobs:
         aws s3 cp roles.yaml s3://bx-tecnogia-dev/icloud/cfn-nested/clientes/roles.yaml
         aws s3 cp policies.yaml s3://bx-tecnogia-dev/icloud/cfn-nested/clientes/policies.yaml
 
-    # - name: Cfn Nested Stack - Role and Policies
-    #   uses: aws-actions/aws-cloudformation-github-deploy@v1
-    #   with:
-    #     name: SA-Integr
-    #     template: nested.yaml
-    #     # template: cloudformation/roles/integr.yaml
-    #     capabilities: CAPABILITY_NAMED_IAM
-    #     no-fail-on-empty-changeset: '1'
+
+
+    - name: Cfn Nested Stack - Role and Policies
+      uses: aws-actions/aws-cloudformation-github-deploy@v1
+      with:
+        name: SA-Integr
+        template: nested.yaml
+        # template: cloudformation/roles/integr.yaml
+        capabilities: CAPABILITY_NAMED_IAM
+        no-fail-on-empty-changeset: '1'
 
 
 

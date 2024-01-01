@@ -7,38 +7,26 @@ Resources:
     Properties:
       TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/roles-corentsu.yaml'
 
-  PoliciesIntegr:
+  PoliciesCiclos:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-integr.yaml'
+      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-ciclos.yaml'
 
-  PoliciesIntcus:
+  PoliciesPdoohd:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-intcus.yaml'
+      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-pdoohd.yaml'
 
-  PoliciesMktven:
+  PoliciesRdgcap:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-mktven.yaml'
+      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-rdgcap.yaml'
 
-  PoliciesOnbemi:
+  PoliciesSoport:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-onbemi.yaml'
-
-  Policies1bluex:
-    Type: AWS::CloudFormation::Stack
-    DependsOn: RolesCorentsu
-    Properties:
-      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-1bluex.yaml'
-
-  PoliciesPosaut:
-    Type: AWS::CloudFormation::Stack
-    DependsOn: RolesCorentsu
-    Properties:
-      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-posaut.yaml'
+      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-soport.yaml'

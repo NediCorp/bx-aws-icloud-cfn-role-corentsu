@@ -2,6 +2,10 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: AWS Nested Stack for IAM SA.
 
 Parameters:
+  BucketCfn:
+    Type: String
+    Description: El nombre del bucket de S3 para los templates de CloudFormation
+
   BucketName:
     Type: String
     Description: Nombre del bucket de S3

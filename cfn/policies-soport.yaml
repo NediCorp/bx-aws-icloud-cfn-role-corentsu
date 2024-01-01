@@ -2,10 +2,10 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Definición de políticas de IAM
 
 Resources:
-  PolicyCorentsuSoport:
+  SNS-InlinePolicy:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "PolicyCorentsuSoport"
+      PolicyName: "SNS-InlinePolicy"
       Roles:
         - !ImportValue RolCorentsuSoportName
       PolicyDocument:
@@ -15,3 +15,22 @@ Resources:
             Action:
               - "ec2:DescribeInstances*"
             Resource: "*"
+
+  SQS-Policy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: "SQS-Policy"
+      Roles:
+        - !ImportValue RolCorentsuSoportName
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Action:
+              - "sqs:ChangeMessageVisibility"
+              - "sqs:GetQueueAttributes"
+              - "sqs:ReceiveMessage"
+              - "sqs:SendMessage"
+              - "sqs:GetQueueUrl"
+            Resource:
+              - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:QUEUE_NAME"

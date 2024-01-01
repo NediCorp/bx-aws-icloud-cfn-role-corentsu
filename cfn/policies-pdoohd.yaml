@@ -2,10 +2,10 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Definición de políticas de IAM
 
 Resources:
-  SnsCorentsuPdoohd:
+  SNS-InlinePolicy:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "SnsCorentsuPdoohd"
+      PolicyName: "SNS-InlinePolicy"
       Roles:
         - !ImportValue RolCorentsuPdoohdName
       PolicyDocument:
@@ -17,10 +17,10 @@ Resources:
             Resource:
               - !Sub "arn:aws:sns:${AWS::Region}:${AWS::AccountId}:topic-pdoohd-pudom-agencies"
 
-  SqsCorentsuPdoohd:
+  SQS-InlinePolicy:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "SqsCorentsuPdoohd"
+      PolicyName: "SQS-InlinePolicy"
       Roles:
         - !ImportValue RolCorentsuPdoohdName
       PolicyDocument:

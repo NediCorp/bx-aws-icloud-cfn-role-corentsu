@@ -2,10 +2,10 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Definición de políticas de IAM
 
 Resources:
-  SnsCorentsuCiclos:
+  SNS-InlinePolicy:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "SnsCorentsuCiclos"
+      PolicyName: "SNS-InlinePolicy"
       Roles:
         - !ImportValue RolCorentsuCiclosName
       PolicyDocument:
@@ -18,10 +18,10 @@ Resources:
               - !Sub "arn:aws:sns:${AWS::Region}:${AWS::AccountId}:topic-ciclos-oscor-orders"
               - !Sub "arn:aws:sns:${AWS::Region}:${AWS::AccountId}:topic-ciclos-optra-events"
 
-  SqsCorentsuCiclos:
+  SQS-InlinePolicy:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "SqsCorentsuCiclos"
+      PolicyName: "SQS-InlinePolicy"
       Roles:
         - !ImportValue RolCorentsuCiclosName
       PolicyDocument:

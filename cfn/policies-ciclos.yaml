@@ -2,10 +2,10 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Definición de políticas de IAM
 
 Resources:
-  PolicyCorentsuCiclos:
+  SnsCorentsuCiclos:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "PolicyCorentsuCiclos"
+      PolicyName: "SnsCorentsuCiclos"
       Roles:
         - !ImportValue RolCorentsuCiclosName
       PolicyDocument:
@@ -16,3 +16,26 @@ Resources:
               - "sns:Publish"
             Resource:
               - !Sub "arn:aws:sns:${AWS::Region}:${AWS::AccountId}:topic-ciclos-oscor-orders"
+              - !Sub "arn:aws:sns:${AWS::Region}:${AWS::AccountId}:topic-ciclos-optra-events"
+
+  SqsCorentsuCiclos:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: "SqsCorentsuCiclos"
+      Roles:
+        - !ImportValue RolCorentsuCiclosName
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Action:
+              - "sqs:ChangeMessageVisibility"
+              - "sqs:GetQueueAttributes"
+              - "sqs:GetQueueUrl"
+              - "sqs:ReceiveMessage"
+              - "sqs:SendMessage"
+            Resource:
+              - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:queue-ciclos-oscor-orders-injected-01"
+              - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:queue-ciclos-oscor-orders-updated-01"
+              - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:queue-ciclos-optra-events-created-01"
+              - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:queue-ciclos-optra-events-inyected-01"

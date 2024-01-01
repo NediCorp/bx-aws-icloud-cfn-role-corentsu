@@ -35,3 +35,19 @@ Resources:
               - "sqs:GetQueueUrl"
             Resource:
               - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:QUEUE_NAME"
+
+  S3InlinePolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: "S3-InlinePolicy"
+      Roles:
+        - !ImportValue RolCorentsuRdgcapName
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Action:
+              - "s3:PutObject"
+              - "s3:GetObject"
+            Resource:
+              - !Sub "arn:aws:s3:::${BucketNameParam}/rdgcap/*"

@@ -41,7 +41,7 @@ Resources:
     Properties:
       PolicyName: "S3-InlinePolicy"
       Roles:
-        - !ImportValue RolCorentsuCiclosName
+        - !ImportValue RolCorentsuPdoohdName
       PolicyDocument:
         Version: "2012-10-17"
         Statement:
@@ -50,4 +50,4 @@ Resources:
               - "s3:PutObject"
               - "s3:GetObject"
             Resource:
-              - !Sub "arn:aws:s3:::${BucketNameParam}/ciclos/*"
+              - !Sub "arn:aws:s3:::${BucketNameParam}/pdoohd/*"

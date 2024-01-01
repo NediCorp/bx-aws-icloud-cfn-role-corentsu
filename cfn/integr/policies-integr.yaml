@@ -15,18 +15,3 @@ Resources:
             Action:
               - "ec2:DescribeInstances*"
             Resource: "*"
-
-  PolicyClientesIntcus:
-    Type: 'AWS::IAM::Policy'
-    Properties:
-      PolicyName: "PolicyClientesIntcus"
-      Roles:
-        - !ImportValue RolClientesIntcusName
-      PolicyDocument:
-        Version: "2012-10-17"
-        Statement:
-          - Effect: "Allow"
-            Action:
-              - "ec2:DescribeInstances*"
-              - "ec2:DescribeVolumes*"
-            Resource: "*"

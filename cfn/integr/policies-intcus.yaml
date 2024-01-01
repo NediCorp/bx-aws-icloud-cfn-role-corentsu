@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Definición de políticas de IAM
+
+Resources:
+  PolicyClientesIntcus:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: "PolicyClientesIntcus"
+      Roles:
+        - !ImportValue RolClientesIntcusName
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Action:
+              - "ec2:DescribeInstances*"
+            Resource: "*"

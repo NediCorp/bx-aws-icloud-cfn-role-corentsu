@@ -10,13 +10,15 @@ Resources:
   RolesCorentsu:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/roles-corentsu.yaml'
+      TemplateURL: 'https://${{ secrets.BUCKET_CFN }}.s3.${AWS::AccountId}.amazonaws.com/icloud/cfn-nested/corentsu/roles-corentsu.yaml'
+      Parameters:
+        BucketNameParam: !Ref BucketName
 
   PoliciesCiclos:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-ciclos.yaml'
+      TemplateURL: 'https://${{ secrets.BUCKET_CFN }}.s3.${AWS::AccountId}.amazonaws.com/icloud/cfn-nested/corentsu/policies-ciclos.yaml'
       Parameters:
         BucketNameParam: !Ref BucketName
 
@@ -24,16 +26,22 @@ Resources:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-pdoohd.yaml'
+      TemplateURL: 'https://${{ secrets.BUCKET_CFN }}.s3.${AWS::AccountId}.amazonaws.com/icloud/cfn-nested/corentsu/policies-pdoohd.yaml'
+      Parameters:
+        BucketNameParam: !Ref BucketName
 
   PoliciesRdgcap:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-rdgcap.yaml'
+      TemplateURL: 'https://${{ secrets.BUCKET_CFN }}.s3.${AWS::AccountId}.amazonaws.com/icloud/cfn-nested/corentsu/policies-rdgcap.yaml'
+      Parameters:
+        BucketNameParam: !Ref BucketName
 
   PoliciesSoport:
     Type: AWS::CloudFormation::Stack
     DependsOn: RolesCorentsu
     Properties:
-      TemplateURL: 'https://bx-tecnogia-dev.s3.us-west-2.amazonaws.com/icloud/cfn-nested/corentsu/policies-soport.yaml'
+      TemplateURL: 'https://${{ secrets.BUCKET_CFN }}.s3.${AWS::AccountId}.amazonaws.com/icloud/cfn-nested/corentsu/policies-soport.yaml'
+      Parameters:
+        BucketNameParam: !Ref BucketName

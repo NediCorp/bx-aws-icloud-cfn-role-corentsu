@@ -2,12 +2,12 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Definición de políticas de IAM
 
 Resources:
-  PolicyClientes1bluex:
+  PolicyCorentsuCiclos:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "PolicyClientes1bluex"
+      PolicyName: "PolicyCorentsuCiclos"
       Roles:
-        - !ImportValue RolClientes1bluexName
+        - !ImportValue RolCorentsuCiclosName
       PolicyDocument:
         Version: "2012-10-17"
         Statement:

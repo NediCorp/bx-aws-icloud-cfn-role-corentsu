@@ -2,12 +2,12 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Definición de políticas de IAM
 
 Resources:
-  PolicyClientesMktven:
+  PolicyCorentsuRdgcap:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "PolicyClientesMktven"
+      PolicyName: "PolicyCorentsuRdgcap"
       Roles:
-        - !ImportValue RolClientesMktvenName
+        - !ImportValue RolCorentsuRdgcapName
       PolicyDocument:
         Version: "2012-10-17"
         Statement:

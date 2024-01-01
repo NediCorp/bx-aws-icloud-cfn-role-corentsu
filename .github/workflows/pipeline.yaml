@@ -6,7 +6,7 @@ on:
       - development
 
 env:
-  STACK_NAME: "SA-clientes"
+  STACK_NAME: "SA-corentsu"
 
 jobs:
   cluster:
@@ -30,7 +30,7 @@ jobs:
     - name: Subir Templates a S3
       run: |
         for file in cfn/roles-* cfn/policies-*; do
-          aws s3 cp "$file" "s3://bx-tecnogia-dev/icloud/cfn-nested/clientes/${file##*/}"
+          aws s3 cp "$file" "s3://bx-tecnogia-dev/icloud/cfn-nested/corentsu/${file##*/}"
         done
 
     - name: Cfn Nested Stack - Role and Policies

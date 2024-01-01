@@ -1,0 +1,121 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: IAM roles for client-specific domains.
+
+Resources:
+  RolCorentsuCiclos:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      # RoleName: "sa-eks-ciclos"
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: "AllowEksAuthToAssumeRoleForPodIdentity"
+            Effect: "Allow"
+            Principal:
+              Service: "pods.eks.amazonaws.com"
+            Action: "sts:AssumeRole"
+      # Path: "/clientes/ciclos/"
+      Tags:
+        - Key: "CreationDate"
+          Value: "01-01-2024"
+        - Key: "CreatedBy"
+          Value: "github.actions"
+        - Key: "Domain"
+          Value: "clientes"
+        - Key: "SubDomain"
+          Value: "ciclos"
+
+  RolCorentsuPdoohd:
+    Type: 'AWS::IAM::Role'
+    # RoleName: "sa-eks-pdoohd"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: "AllowEksAuthToAssumeRoleForPodIdentity"
+            Effect: "Allow"
+            Principal:
+              Service: "pods.eks.amazonaws.com"
+            Action: "sts:AssumeRole"
+      # Path: "/clientes/pdoohd/"
+      Tags:
+        - Key: "CreationDate"
+          Value: "01-01-2024"
+        - Key: "CreatedBy"
+          Value: "github.actions"
+        - Key: "Domain"
+          Value: "clientes"
+        - Key: "SubDomain"
+          Value: "pdoohd"
+
+
+  RolCorentsuRdgcap:
+    Type: 'AWS::IAM::Role'
+    # RoleName: "sa-eks-rdgcap"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: "AllowEksAuthToAssumeRoleForPodIdentity"
+            Effect: "Allow"
+            Principal:
+              Service: "pods.eks.amazonaws.com"
+            Action: "sts:AssumeRole"
+      # Path: "/clientes/rdgcap/"
+      Tags:
+        - Key: "CreationDate"
+          Value: "01-01-2024"
+        - Key: "CreatedBy"
+          Value: "github.actions"
+        - Key: "Domain"
+          Value: "clientes"
+        - Key: "SubDomain"
+          Value: "rdgcap"
+
+  RolCorentsuSoport:
+    Type: 'AWS::IAM::Role'
+    # RoleName: "sa-eks-soport"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: "AllowEksAuthToAssumeRoleForPodIdentity"
+            Effect: "Allow"
+            Principal:
+              Service: "pods.eks.amazonaws.com"
+            Action: "sts:AssumeRole"
+      # Path: "/clientes/soport/"
+      Tags:
+        - Key: "CreationDate"
+          Value: "01-01-2024"
+        - Key: "CreatedBy"
+          Value: "github.actions"
+        - Key: "Domain"
+          Value: "clientes"
+        - Key: "SubDomain"
+          Value: "soport"
+
+Outputs:
+  RolCorentsuCiclosName:
+    Description: "Name del Rol Clientes Ciclos"
+    Value: !Ref RolCorentsuCiclos
+    Export:
+      Name: RolCorentsuCiclosName
+
+  RolCorentsuPdoohdName:
+    Description: "Name del Rol Clientes Pdoohd"
+    Value: !Ref RolCorentsuPdoohd
+    Export:
+      Name: RolCorentsuPdoohdName
+
+  RolCorentsuRdgcapName:
+    Description: "Name del Rol Clientes Rdgcap"
+    Value: !Ref RolCorentsuRdgcap
+    Export:
+      Name: RolCorentsuRdgcapName
+
+  RolCorentsuSoportName:
+    Description: "Name del Rol Clientes Soport"
+    Value: !Ref RolCorentsuSoport
+    Export:
+      Name: RolCorentsuSoportName

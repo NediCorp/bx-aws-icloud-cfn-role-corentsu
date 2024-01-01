@@ -2,12 +2,12 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Definición de políticas de IAM
 
 Resources:
-  PolicyClientesPosaut:
+  PolicyCorentsuPdoohd:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "PolicyClientesPosaut"
+      PolicyName: "PolicyCorentsuPdoohd"
       Roles:
-        - !ImportValue RolClientesPosautName
+        - !ImportValue RolCorentsuPdoohdName
       PolicyDocument:
         Version: "2012-10-17"
         Statement:

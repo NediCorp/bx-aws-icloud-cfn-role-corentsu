@@ -2,12 +2,12 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: Definición de políticas de IAM
 
 Resources:
-  PolicyClientesIntegr:
+  PolicyCorentsuSoport:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "PolicyClientesIntegr"
+      PolicyName: "PolicyCorentsuSoport"
       Roles:
-        - !ImportValue RolClientesIntegrName
+        - !ImportValue RolCorentsuSoportName
       PolicyDocument:
         Version: "2012-10-17"
         Statement:
